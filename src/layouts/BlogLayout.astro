@@ -1,0 +1,133 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="max-w-3xl mx-auto px-6 py-24" data-pagefind-body>
+
+    <!-- Header -->
+    <header class="mb-12 space-y-6">
+
+      <!-- Category Badge -->
+      <div>
+        <span class="px-3 py-1 rounded-full text-xs font-medium border"
+              style="border-color: var(--color-primary); color: var(--color-primary);">
+          {frontmatter.category}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight"
+          style="color: var(--color-foreground);">
+        {frontmatter.title}
+      </h1>
+
+      <!-- Description -->
+      <p class="text-xl" style="color: #94a3b8;">{frontmatter.description}</p>
+
+      <!-- Meta -->
+      <div class="flex flex-wrap items-center gap-4 text-sm" style="color: #64748b;">
+        <span>📅 {formattedDate}</span>
+        <span>·</span>
+        <div class="flex flex-wrap gap-2">
+          {frontmatter.tags.map((tag: string) => (
+            <span class="px-2 py-0.5 rounded text-xs"
+                  style="background-color: #1e293b; color: #94a3b8;">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr style="border-color: #1e293b;" />
+    </header>
+
+    <!-- Blog Content -->
+    <div class="prose-content">
+      <slot />
+    </div>
+
+    <!-- Back Link -->
+    <footer class="mt-16 pt-8" style="border-top: 1px solid #1e293b;">
+      <a href="/blog" class="btn-outline text-sm">← Back to Blog</a>
+    </footer>
+
+  </article>
+</BaseLayout>
+
+<style>
+  .prose-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-foreground);
+  }
+
+  .prose-content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-foreground);
+  }
+
+  .prose-content :global(p) {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+  }
+
+  .prose-content :global(ul), .prose-content :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: #cbd5e1;
+  }
+
+  .prose-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .prose-content :global(pre) {
+    background-color: #1e293b;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    border: 1px solid #334155;
+  }
+
+  .prose-content :global(code) {
+    color: var(--color-accent);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
+
+  .prose-content :global(blockquote) {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .prose-content :global(strong) {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+</style>

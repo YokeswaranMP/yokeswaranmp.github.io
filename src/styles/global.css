@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+@theme {
+  --color-background: #0f172a;
+  --color-primary: #6366f1;
+  --color-accent: #22c55e;
+  --color-foreground: #e2e8f0;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-mono: 'Fira Code', monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-family-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+
+  a {
+    color: var(--color-primary);
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-accent);
+  }
+
+  code {
+    font-family: var(--font-family-mono);
+    color: var(--color-accent);
+    background-color: #1e293b;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  pre {
+    background-color: #1e293b;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background-color: #4f46e5;
+    color: white;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    border-color: var(--color-primary);
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+  }
+}

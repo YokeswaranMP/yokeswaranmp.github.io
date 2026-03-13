@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Search" 
+  description="Search through all blog posts and articles"
+>
+  <section class="max-w-4xl mx-auto px-6 py-24">
+
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        Search
+      </h1>
+      <p class="text-lg" style="color: #94a3b8;">
+        Search through all articles and blog posts.
+      </p>
+    </div>
+
+    <!-- Search UI -->
+    <div id="search" class="mb-8"></div>
+
+    <!-- Results -->
+    <div id="search-results"></div>
+
+  </section>
+</BaseLayout>
+
+<!-- Pagefind UI Styles -->
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+
+<style>
+  .pagefind-ui__search-input {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #e2e8f0 !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+  }
+
+  .pagefind-ui__search-input:focus {
+    border-color: var(--color-primary) !important;
+    outline: none !important;
+  }
+
+  .pagefind-ui__result {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 0.75rem !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .pagefind-ui__result:hover {
+    border-color: var(--color-primary) !important;
+  }
+
+  .pagefind-ui__result-title {
+    color: var(--color-foreground) !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+  }
+
+  .pagefind-ui__result-excerpt {
+    color: #94a3b8 !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .pagefind-ui__button {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+    border-radius: 0.5rem !important;
+    border: none !important;
+    padding: 0.5rem 1.5rem !important;
+    cursor: pointer !important;
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.PagefindUI) {
+      new window.PagefindUI({
+        element: '#search',
+        showSubResults: true,
+        showImages: false,
+      });
+    } else {
+      document.getElementById('search').innerHTML = `
+        <div style="
+          background-color: #1e293b; 
+          border: 1px solid #334155; 
+          border-radius: 0.75rem; 
+          padding: 2rem; 
+          text-align: center;
+          color: #94a3b8;
+        ">
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+            🔍 Search index not found
+          </p>
+          <p style="font-size: 0.875rem;">
+            Run <code style="color: #22c55e; background: #0f172a; padding: 2px 6px; border-radius: 4px;">npm run build</code> 
+            first to generate the search index, then 
+            <code style="color: #22c55e; background: #0f172a; padding: 2px 6px; border-radius: 4px;">npm run preview</code> 
+            to test search.
+          </p>
+        </div>
+      `;
+    }
+  });
+</script>
+
+<script src="/pagefind/pagefind-ui.js" is:inline></script>

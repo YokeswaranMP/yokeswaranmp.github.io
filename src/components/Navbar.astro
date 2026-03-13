@@ -1,0 +1,80 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/achievements', label: 'Achievements' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-800" data-pagefind-ignore
+        style="background-color: rgba(15, 23, 42, 0.85);">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="/" class="text-xl font-bold" style="color: var(--color-foreground);">
+      YMP<span style="color: var(--color-primary);">.</span>dev
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href} 
+            class={`text-sm font-medium transition-colors duration-200 ${
+              currentPath === link.href 
+                ? 'text-primary' 
+                : 'text-slate-400 hover:text-foreground'
+            }`}
+            style={currentPath === link.href ? 'color: var(--color-primary);' : ''}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Search Icon -->
+    <a href="/search" class="hidden md:flex items-center gap-2 text-sm text-slate-400 hover:text-foreground transition-colors">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden text-slate-400 hover:text-foreground">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+    <ul class="flex flex-col gap-4">
+      {navLinks.map(link => (
+        <li>
+          <a href={link.href} class="text-slate-400 hover:text-foreground text-sm font-medium">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
