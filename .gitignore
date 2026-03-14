@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Secret scripts
+*.ps1
+.env
+.env.local
+*.secret
