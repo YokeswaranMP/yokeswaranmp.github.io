@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import ChatAgent from '../components/ChatAgent.astro';
 
 interface Props {
   title: string;
@@ -71,5 +72,6 @@ const fullTitle = `${title} | Yokeswaran MP`;
         </div>
       </div>
     </footer>
+    <ChatAgent />
   </body>
 </html>
