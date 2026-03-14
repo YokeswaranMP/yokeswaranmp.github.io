@@ -1,9 +1,141 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: "Real-Time Customer Data Pipeline",
+    description: "Built a real-time data pipeline ingesting 10M+ events daily using Apache Kafka and Spark Streaming, feeding into Adobe AEP for instant profile updates.",
+    tags: ["Kafka", "Spark", "AEP", "Python"],
+    category: "Data Engineering",
+    github: "https://github.com/yokeswaranmp",
+    live: "",
+    featured: true,
+  },
+  {
+    title: "Adobe AEP RTCDP Implementation",
+    description: "End-to-end RTCDP implementation for a retail client — XDM schema design, data ingestion, segmentation, and activation to paid media destinations.",
+    tags: ["Adobe AEP", "RTCDP", "XDM", "Segmentation"],
+    category: "Adobe AEP",
+    github: "",
+    live: "",
+    featured: true,
+  },
+  {
+    title: "Automated Blog Publishing Pipeline",
+    description: "Built this portfolio's automated blog publishing system using Make.com webhooks, GitHub API, and Astro static site generation.",
+    tags: ["Make.com", "GitHub API", "Astro", "Automation"],
+    category: "Automation",
+    github: "https://github.com/yokeswaranmp/yokeswaranmp.github.io",
+    live: "https://yokeswaranmp.github.io",
+    featured: true,
+  },
+  {
+    title: "AI Blog Draft Generator",
+    description: "An AI agent that generates structured blog drafts based on a topic and outline — integrates with the automated publishing pipeline.",
+    tags: ["OpenAI", "LangChain", "n8n", "AI"],
+    category: "AI Experiments",
+    github: "https://github.com/yokeswaranmp",
+    live: "",
+    featured: false,
+  },
+];
 ---
-<BaseLayout title="Projects">
-  <section class="max-w-4xl mx-auto px-6 py-24">
-    <h1 class="text-4xl font-bold mb-4" style="color: var(--color-foreground);">Projects</h1>
-    <p style="color: #94a3b8;">Coming soon...</p>
+
+<BaseLayout
+  title="Projects"
+  description="Portfolio projects by Yokeswaran MP"
+>
+  <section class="max-w-5xl mx-auto px-6 py-24">
+
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        Projects
+      </h1>
+      <div class="w-16 h-1 rounded-full"
+           style="background-color: var(--color-primary);"></div>
+      <p class="mt-4 text-lg" style="color: #94a3b8;">
+        Things I've built and shipped.
+      </p>
+    </div>
+
+    <!-- Featured Projects -->
+    <div class="space-y-6 mb-16">
+      <h2 class="text-xl font-semibold" style="color: #64748b;">Featured</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {projects.filter(p => p.featured).map(project => (
+          <div class="card group space-y-4">
+
+            <!-- Category -->
+            <span class="px-3 py-1 rounded-full text-xs font-medium border"
+                  style="border-color: var(--color-primary); color: var(--color-primary);">
+              {project.category}
+            </span>
+
+            <!-- Title -->
+            <h3 class="text-xl font-bold" style="color: var(--color-foreground);">
+              {project.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-sm leading-relaxed" style="color: #94a3b8;">
+              {project.description}
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-2 py-1 rounded text-xs"
+                      style="background-color: #0f172a; color: #64748b; border: 1px solid #1e293b;">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Links -->
+            <div class="flex gap-4 pt-2">
+              {project.github && (
+                <a href={project.github} target="_blank"
+                   class="text-sm font-medium flex items-center gap-1"
+                   style="color: var(--color-primary);">
+                  GitHub →
+                </a>
+              )}
+              {project.live && (
+                <a href={project.live} target="_blank"
+                   class="text-sm font-medium flex items-center gap-1"
+                   style="color: var(--color-accent);">
+                  Live Site →
+                </a>
+              )}
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Other Projects -->
+    <div class="space-y-6">
+      <h2 class="text-xl font-semibold" style="color: #64748b;">Other Projects</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {projects.filter(p => !p.featured).map(project => (
+          <div class="card space-y-3">
+            <h3 class="font-bold" style="color: var(--color-foreground);">{project.title}</h3>
+            <p class="text-sm" style="color: #94a3b8;">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-2 py-0.5 rounded text-xs"
+                      style="background-color: #0f172a; color: #64748b; border: 1px solid #1e293b;">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
   </section>
 </BaseLayout>

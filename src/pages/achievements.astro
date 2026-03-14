@@ -1,9 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const achievements = [
+  {
+    year: "2024",
+    title: "Adobe Certified Expert – AEP",
+    description: "Achieved Adobe Certified Expert certification in Adobe Experience Platform.",
+    icon: "🏆",
+    type: "Certification",
+  },
+  {
+    year: "2024",
+    title: "Built Real-Time Pipeline at Scale",
+    description: "Designed and shipped a real-time data pipeline processing 10M+ events per day with zero downtime.",
+    icon: "⚡",
+    type: "Achievement",
+  },
+  {
+    year: "2023",
+    title: "AWS Certified Data Analytics",
+    description: "Earned AWS Certified Data Analytics – Specialty certification.",
+    icon: "☁️",
+    type: "Certification",
+  },
+  {
+    year: "2023",
+    title: "Open Source Contributor",
+    description: "Active contributor to open source data engineering tools and libraries.",
+    icon: "🌟",
+    type: "Achievement",
+  },
+  {
+    year: "2023",
+    title: "Technical Blog Launch",
+    description: "Launched this portfolio and blog platform with automated publishing pipeline.",
+    icon: "✍️",
+    type: "Milestone",
+  },
+];
 ---
-<BaseLayout title="Achievements">
+
+<BaseLayout
+  title="Achievements"
+  description="Certifications, milestones and achievements of Yokeswaran MP"
+>
   <section class="max-w-4xl mx-auto px-6 py-24">
-    <h1 class="text-4xl font-bold mb-4" style="color: var(--color-foreground);">Achievements</h1>
-    <p style="color: #94a3b8;">Coming soon...</p>
+
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        Achievements
+      </h1>
+      <div class="w-16 h-1 rounded-full"
+           style="background-color: var(--color-primary);"></div>
+      <p class="mt-4 text-lg" style="color: #94a3b8;">
+        Certifications, milestones and things I'm proud of.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative space-y-8">
+
+      <!-- Timeline Line -->
+      <div class="absolute left-8 top-0 bottom-0 w-px"
+           style="background-color: #1e293b;"></div>
+
+      {achievements.map(item => (
+        <div class="relative flex gap-6 pl-20">
+
+          <!-- Icon -->
+          <div class="absolute left-0 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shrink-0"
+               style="background-color: #1e293b; border: 1px solid #334155;">
+            {item.icon}
+          </div>
+
+          <!-- Content -->
+          <div class="card flex-1 space-y-3">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium"
+                    style="background-color: #0f172a; color: var(--color-primary); border: 1px solid var(--color-primary);">
+                {item.type}
+              </span>
+              <span class="text-sm font-medium" style="color: #64748b;">{item.year}</span>
+            </div>
+            <h3 class="text-lg font-bold" style="color: var(--color-foreground);">
+              {item.title}
+            </h3>
+            <p class="text-sm leading-relaxed" style="color: #94a3b8;">
+              {item.description}
+            </p>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
   </section>
 </BaseLayout>

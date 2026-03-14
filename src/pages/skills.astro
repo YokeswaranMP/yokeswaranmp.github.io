@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skillCategories = [
+  {
+    title: "Data Engineering",
+    icon: "🔧",
+    skills: [
+      { name: "Apache Spark", level: 90 },
+      { name: "Apache Kafka", level: 85 },
+      { name: "dbt", level: 88 },
+      { name: "Airflow", level: 82 },
+      { name: "Python", level: 92 },
+      { name: "SQL", level: 95 },
+    ]
+  },
+  {
+    title: "Adobe Experience Platform",
+    icon: "🎯",
+    skills: [
+      { name: "Real-Time CDP", level: 90 },
+      { name: "Journey Optimizer", level: 85 },
+      { name: "Data Collection", level: 88 },
+      { name: "XDM Schema Design", level: 92 },
+      { name: "Segmentation", level: 87 },
+      { name: "Destinations", level: 83 },
+    ]
+  },
+  {
+    title: "Cloud & Infrastructure",
+    icon: "☁️",
+    skills: [
+      { name: "AWS", level: 85 },
+      { name: "Azure", level: 80 },
+      { name: "Docker", level: 88 },
+      { name: "Kubernetes", level: 75 },
+      { name: "Terraform", level: 78 },
+      { name: "GitHub Actions", level: 90 },
+    ]
+  },
+  {
+    title: "Automation & AI",
+    icon: "⚡",
+    skills: [
+      { name: "n8n", level: 88 },
+      { name: "Make.com", level: 85 },
+      { name: "OpenAI API", level: 82 },
+      { name: "LangChain", level: 78 },
+      { name: "REST APIs", level: 92 },
+      { name: "Webhooks", level: 90 },
+    ]
+  }
+];
+---
+
+<BaseLayout 
+  title="Skills"
+  description="Technical skills and expertise of Yokeswaran MP"
+>
+  <section class="max-w-5xl mx-auto px-6 py-24">
+
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        Skills
+      </h1>
+      <div class="w-16 h-1 rounded-full"
+           style="background-color: var(--color-primary);"></div>
+      <p class="mt-4 text-lg" style="color: #94a3b8;">
+        Technologies and tools I work with daily.
+      </p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {skillCategories.map(category => (
+        <div class="card space-y-6">
+
+          <!-- Category Header -->
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">{category.icon}</span>
+            <h2 class="text-xl font-bold" style="color: var(--color-foreground);">
+              {category.title}
+            </h2>
+          </div>
+
+          <!-- Skills -->
+          <div class="space-y-4">
+            {category.skills.map(skill => (
+              <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                  <span style="color: #cbd5e1;">{skill.name}</span>
+                  <span style="color: #64748b;">{skill.level}%</span>
+                </div>
+                <div class="h-2 rounded-full" style="background-color: #1e293b;">
+                  <div 
+                    class="h-2 rounded-full skill-bar"
+                    style={`width: ${skill.level}%; background: linear-gradient(90deg, var(--color-primary), var(--color-accent));`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </section>
+</BaseLayout>
+
+<style>
+  .skill-bar {
+    transition: width 1s ease-in-out;
+  }
+</style>

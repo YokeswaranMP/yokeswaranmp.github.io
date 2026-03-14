@@ -1,9 +1,130 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Contact">
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Yokeswaran MP"
+>
   <section class="max-w-4xl mx-auto px-6 py-24">
-    <h1 class="text-4xl font-bold mb-4" style="color: var(--color-foreground);">Contact</h1>
-    <p style="color: #94a3b8;">Coming soon...</p>
+
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        Contact
+      </h1>
+      <div class="w-16 h-1 rounded-full"
+           style="background-color: var(--color-primary);"></div>
+      <p class="mt-4 text-lg" style="color: #94a3b8;">
+        Have a project in mind or want to collaborate? Let's talk.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- Contact Info -->
+      <div class="space-y-8">
+        <p class="leading-relaxed" style="color: #94a3b8;">
+          I'm always open to discussing new projects, interesting ideas, 
+          or opportunities to collaborate on data engineering and AEP solutions.
+        </p>
+
+        <!-- Contact Methods -->
+        <div class="space-y-4">
+          {[
+            { icon: '📧', label: 'Email', value: 'yokeswaranmp@gmail.com', href: 'mailto:yokeswaranmp@gmail.com' },
+            { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/yokeswaranmp', href: 'https://linkedin.com/in/yokeswaranmp' },
+            { icon: '🐙', label: 'GitHub', value: 'github.com/yokeswaranmp', href: 'https://github.com/yokeswaranmp' },
+          ].map(contact => (
+            <a href={contact.href} target="_blank"
+               class="card flex items-center gap-4 group">
+              <span class="text-2xl">{contact.icon}</span>
+              <div>
+                <p class="text-xs mb-1" style="color: #64748b;">{contact.label}</p>
+                <p class="text-sm font-medium group-hover:text-primary transition-colors"
+                   style="color: var(--color-foreground);">
+                  {contact.value}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="card space-y-6">
+        <h2 class="text-xl font-bold" style="color: var(--color-foreground);">
+          Send a Message
+        </h2>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm mb-2" style="color: #94a3b8;">Name</label>
+            <input 
+              type="text" 
+              id="name"
+              placeholder="Your name"
+              class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all"
+              style="background-color: #0f172a; border: 1px solid #334155; color: var(--color-foreground);"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2" style="color: #94a3b8;">Email</label>
+            <input 
+              type="email"
+              id="email"
+              placeholder="your@email.com"
+              class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all"
+              style="background-color: #0f172a; border: 1px solid #334155; color: var(--color-foreground);"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2" style="color: #94a3b8;">Message</label>
+            <textarea 
+              id="message"
+              rows="5"
+              placeholder="Tell me about your project..."
+              class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all resize-none"
+              style="background-color: #0f172a; border: 1px solid #334155; color: var(--color-foreground);"
+            ></textarea>
+          </div>
+
+          <button 
+            id="send-btn"
+            class="btn-primary w-full text-center"
+          >
+            Send Message →
+          </button>
+
+          <p id="form-status" class="text-sm text-center hidden" style="color: var(--color-accent);">
+            ✅ Message sent! I'll get back to you soon.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </section>
 </BaseLayout>
+
+<script>
+  const btn = document.getElementById('send-btn');
+  const status = document.getElementById('form-status');
+
+  btn?.addEventListener('click', () => {
+    const name = (document.getElementById('name') as HTMLInputElement)?.value;
+    const email = (document.getElementById('email') as HTMLInputElement)?.value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value;
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    const mailto = `mailto:yokeswaranmp@gmail.com?subject=Portfolio Contact from ${name}&body=${message}%0A%0AFrom: ${email}`;
+    window.location.href = mailto;
+    status?.classList.remove('hidden');
+  });
+</script>

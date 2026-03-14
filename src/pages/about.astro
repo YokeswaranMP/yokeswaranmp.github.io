@@ -1,9 +1,103 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="About">
+
+<BaseLayout 
+  title="About"
+  description="Learn about Yokeswaran MP - Data Engineer, AEP Architect and Automation Builder"
+>
   <section class="max-w-4xl mx-auto px-6 py-24">
-    <h1 class="text-4xl font-bold mb-4" style="color: var(--color-foreground);">About</h1>
-    <p style="color: #94a3b8;">Coming soon...</p>
+
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-foreground);">
+        About Me
+      </h1>
+      <div class="w-16 h-1 rounded-full" 
+           style="background-color: var(--color-primary);"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid md:grid-cols-3 gap-12">
+
+      <!-- Avatar + Quick Info -->
+      <div class="md:col-span-1 space-y-6">
+
+        <!-- Avatar -->
+        <div class="w-48 h-48 rounded-2xl flex items-center justify-center text-6xl font-bold mx-auto md:mx-0"
+             style="background: linear-gradient(135deg, #6366f1, #22c55e);">
+          YM
+        </div>
+
+        <!-- Quick Info -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm" style="color: #94a3b8;">
+            <span>📍</span>
+            <span>India</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm" style="color: #94a3b8;">
+            <span>💼</span>
+            <span>Data Engineer</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm" style="color: #94a3b8;">
+            <span>🎓</span>
+            <span>Adobe AEP Architect</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm" style="color: #94a3b8;">
+            <span>✍️</span>
+            <span>Weekly Blogger</span>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-4">
+          <a href="https://github.com/yokeswaranmp" target="_blank"
+             class="btn-outline text-xs px-3 py-2">GitHub</a>
+          <a href="https://linkedin.com/in/yokeswaranmp" target="_blank"
+             class="btn-outline text-xs px-3 py-2">LinkedIn</a>
+        </div>
+
+      </div>
+
+      <!-- Bio -->
+      <div class="md:col-span-2 space-y-6">
+        <p class="text-lg leading-relaxed" style="color: #cbd5e1;">
+          I'm a passionate Data Engineer and Adobe Experience Platform Architect 
+          with deep expertise in building scalable data pipelines, real-time 
+          customer data platforms, and intelligent automation workflows.
+        </p>
+
+        <p class="leading-relaxed" style="color: #94a3b8;">
+          My journey started with data engineering — designing ETL pipelines, 
+          working with distributed systems, and solving complex data challenges 
+          at scale. Over time, I specialized in Adobe AEP, helping organizations 
+          unify their customer data and deliver personalized experiences.
+        </p>
+
+        <p class="leading-relaxed" style="color: #94a3b8;">
+          Today I combine data engineering, AEP architecture, and automation 
+          to build end-to-end solutions that turn raw data into business value. 
+          I write weekly about these topics to share what I learn along the way.
+        </p>
+
+        <!-- What I Do -->
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          {[
+            { icon: '🔧', title: 'Data Engineering', desc: 'ETL pipelines, data modeling, distributed systems' },
+            { icon: '🎯', title: 'Adobe AEP', desc: 'RTCDP, Journey Optimizer, Data Collection' },
+            { icon: '⚡', title: 'Automation', desc: 'n8n, Make.com, workflow automation' },
+            { icon: '🤖', title: 'AI Experiments', desc: 'LLMs, AI agents, intelligent workflows' },
+          ].map(item => (
+            <div class="card space-y-2">
+              <span class="text-2xl">{item.icon}</span>
+              <h3 class="font-semibold text-sm" style="color: var(--color-foreground);">{item.title}</h3>
+              <p class="text-xs" style="color: #64748b;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
   </section>
 </BaseLayout>

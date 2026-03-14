@@ -5,12 +5,19 @@ import Navbar from '../components/Navbar.astro';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: string;
 }
 
-const { 
-  title, 
-  description = 'Yokeswaran MP – Data Engineer, AEP Architect & Automation Builder' 
+const {
+  title,
+  description = 'Yokeswaran MP – Data Engineer, AEP Architect & Automation Builder. Weekly blogs on Data Engineering, Adobe AEP, and AI.',
+  image = '/og-image.png',
+  type = 'website'
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | Yokeswaran MP`;
 ---
 
 <!DOCTYPE html>
@@ -18,15 +25,51 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Yokeswaran MP" />
-    <title>{title} | Yokeswaran MP</title>
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Yokeswaran MP" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="min-h-screen antialiased">
     <Navbar />
     <main>
       <slot />
     </main>
+
+    <!-- Footer -->
+    <footer class="border-t mt-24 py-12" style="border-color: #1e293b;">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm" style="color: #64748b;">
+          © {new Date().getFullYear()} Yokeswaran MP. Built with Astro & Tailwind.
+        </p>
+        <div class="flex gap-6 text-sm" style="color: #64748b;">
+          <a href="/blog" class="hover:text-foreground transition-colors">Blog</a>
+          <a href="/projects" class="hover:text-foreground transition-colors">Projects</a>
+          <a href="/contact" class="hover:text-foreground transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
