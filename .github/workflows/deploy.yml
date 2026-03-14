@@ -35,6 +35,8 @@ jobs:
 
       - name: Build site + index
         run: npm run build
+        env:
+          PUBLIC_GROQ_API_KEY: ${{ secrets.PUBLIC_GROQ_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
