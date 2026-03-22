@@ -130,4 +130,52 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
     color: var(--color-foreground);
     font-weight: 600;
   }
+    .prose-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .prose-content :global(thead) {
+    background-color: var(--color-primary);
+  }
+
+  .prose-content :global(thead th) {
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .prose-content :global(tbody tr:nth-child(even)) {
+    background-color: #1e293b;
+  }
+
+  .prose-content :global(tbody tr:nth-child(odd)) {
+    background-color: #0f172a;
+  }
+
+  .prose-content :global(tbody tr:hover) {
+    background-color: #334155;
+    transition: background-color 0.2s;
+  }
+
+  .prose-content :global(td) {
+    padding: 0.75rem 1rem;
+    color: #cbd5e1;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: top;
+  }
+
+  .prose-content :global(th) {
+    border-bottom: 2px solid #4f46e5;
+  }
+
+  .prose-content :global(table a) {
+    color: var(--color-accent);
+  }
 </style>
