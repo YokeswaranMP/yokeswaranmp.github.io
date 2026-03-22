@@ -2,42 +2,156 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const achievements = [
+{
+    year: "2025",
+    title: "Adobe Journey Optimizer & Campaign Classic",
+    description: "Gained hands-on expertise in Adobe Workfront, Adobe Campaign Classic, and Adobe Journey Optimizer through migration projects at TCS, enhancing marketing automation skills.",
+    icon: "🎯",
+    type: "Achievement",
+  },  
+{
+    year: "2025",
+    title: "Knowledge Badge – AI Agents on Databricks",
+    description: "Earned Databricks Knowledge Badge for AI Agents, demonstrating expertise in building and deploying AI agent workflows on the Databricks platform.",
+    icon: "🤖",
+    type: "Certification",
+  },
   {
-    year: "2024",
-    title: "Adobe Certified Expert – AEP",
-    description: "Achieved Adobe Certified Expert certification in Adobe Experience Platform.",
-    icon: "🏆",
+    year: "2025",
+    title: "Databricks Fundamentals Accreditation",
+    description: "Completed Databricks Academy Accreditation in Fundamentals, strengthening expertise in unified analytics and data engineering on the Lakehouse platform.",
+    icon: "🧱",
+    type: "Certification",
+  },
+  {
+    year: "2025",
+    title: "Talent & Development SPOC at TCS",
+    description: "Nominated by delivery partner for mentoring enthusiasm. Managed over 230 professionals across multiple towers, coordinating mandatory learning programs and fostering a culture of continuous growth.",
+    icon: "👥",
+    type: "Leadership",
+  },
+  {
+    year: "2025",
+    title: "40% Revenue Loss Prevention",
+    description: "Worked on multiple high-revenue-impacting applications at TCS, applying permanent break fixes that resulted in savings of approximately 40% of potential revenue loss.",
+    icon: "💰",
+    type: "Achievement",
+  },
+  {
+    year: "2025",
+    title: "Client Recommendation – Rogers Communications",
+    description: "Received glowing recommendation from Glenn Lau, Senior Manager at Rogers Communications: 'Yokes is one of my most trusted IT partners — an exceptional problem solver with strong end-to-end ownership.'",
+    icon: "⭐",
+    type: "Recognition",
+  },
+  {
+    year: "2025",
+    title: "ETL and Data Pipelines – Coursera",
+    description: "Completed ETL and Data Pipelines with Shell, Airflow and Kafka certification. Skills: Apache Kafka, Airflow, DAG, Shell Scripting, Python.",
+    icon: "🔄",
     type: "Certification",
   },
   {
     year: "2024",
-    title: "Built Real-Time Pipeline at Scale",
-    description: "Designed and shipped a real-time data pipeline processing 10M+ events per day with zero downtime.",
-    icon: "⚡",
+    title: "⭐ Star of the Month – TCS",
+    description: "Honoured to receive the 'Star of the Month' award from Tata Consultancy Services in October 2024. Grateful for the recognition and inspired to keep striving for excellence.",
+    icon: "🌟",
+    type: "Recognition",
+  },
+  {
+    year: "2024",
+    title: "Advanced AI: Transformers for Computer Vision",
+    description: "Completed LinkedIn certification in Advanced AI covering Transformer Models, Generative Adversarial Networks (GANs), and Generative AI applications.",
+    icon: "🧠",
+    type: "Certification",
+  },
+  {
+    year: "2024",
+    title: "Data Engineering Essentials – Coursera",
+    description: "Completed Coursera certification in Data Engineering Essentials, reinforcing core data engineering principles and best practices.",
+    icon: "⚙️",
+    type: "Certification",
+  },
+  {
+    year: "2023",
+    title: "30% Campaign Downtime Reduction",
+    description: "Implemented a proactive monitoring system using SAS RTDM that reduced campaign downtime by 30% and enhanced overall campaign efficiency.",
+    icon: "📉",
     type: "Achievement",
   },
   {
     year: "2023",
-    title: "AWS Certified Data Analytics",
-    description: "Earned AWS Certified Data Analytics – Specialty certification.",
+    title: "20% Reduction in Production Defects",
+    description: "Streamlined code review processes collaborating with TechMahindra, Capgemini and HCL vendors, resulting in a 20% reduction in production defects and improved system stability.",
+    icon: "🛡️",
+    type: "Achievement",
+  },
+    {
+    year: "2023",
+    title: "Technical Excellence Award – TCS",
+    description: "Recognised for Technical Excellence at Tata Consultancy Services. A testament to consistent hard work, dedication, and pushing the boundaries of what is possible in the field of data engineering.",
+    icon: "🏅",
+    type: "Recognition",
+  },
+  {
+    year: "2022",
+    title: "ML Observability Fundamentals – Arize AI",
+    description: "Completed ML Observability Fundamentals certification from Arize AI, gaining expertise in monitoring and observing machine learning models in production.",
+    icon: "🔬",
+    type: "Certification",
+  },
+  {
+    year: "2021",
+    title: "Microsoft Certified: Azure Fundamentals",
+    description: "Earned Microsoft Azure Fundamentals certification (AZ-900), establishing a strong foundation in cloud computing and Azure services.",
     icon: "☁️",
     type: "Certification",
   },
   {
-    year: "2023",
-    title: "Open Source Contributor",
-    description: "Active contributor to open source data engineering tools and libraries.",
-    icon: "🌟",
+    year: "2021",
+    title: "15% System Downtime Reduction at TCS",
+    description: "Received client recommendation for exceptional incident management, reducing system downtime by 15% through proactive monitoring and implementing multiple permanent break fixes.",
+    icon: "⚡",
     type: "Achievement",
   },
   {
-    year: "2023",
-    title: "Technical Blog Launch",
-    description: "Launched this portfolio and blog platform with automated publishing pipeline.",
-    icon: "✍️",
-    type: "Milestone",
+    year: "2020",
+    title: "Google Cloud Platform Certifications",
+    description: "Completed GCP Big Data and Machine Learning Fundamentals, GCP Core Infrastructure, and BigQuery Data Preparation certifications from Coursera.",
+    icon: "🌐",
+    type: "Certification",
+  },
+  {
+    year: "2020",
+    title: "DevOps Fundamentals – TCS",
+    description: "Completed DevOps Fundamentals certification from Tata Consultancy Services, establishing strong foundation in CI/CD pipelines and DevOps practices.",
+    icon: "🔧",
+    type: "Certification",
+  },
+  {
+    year: "2021",
+    title: "HackerEarth Campus Ambassador",
+    description: "Served as Campus Ambassador for HackerEarth for 3 years. Organized hackathons including RVS CODIUM and CODE ZAPPIES, empowering over 1,000 students to enhance their coding skills.",
+    icon: "🏆",
+    type: "Leadership",
+  },
+  {
+    year: "2020",
+    title: "Best Outgoing Student – B.Sc IT, RVSCAS",
+    description: "Honoured as the Best Outgoing Student of the year for B.Sc Information Technology at Rathnavel Subramaniam College of Arts and Science, associated with Bharathiar University (2017–2020).",
+    icon: "🎓",
+    type: "Recognition",
+  },
+   {
+    year: "2018",
+    title: "Winner – RVS CODIUM '18",
+    description: "Won a global-level online coding competition conducted by HackerEarth Campus Ambassadors of RVS College of Arts and Science, supported by Facebook Developer Circles and GDG Coimbatore.",
+    icon: "🥇",
+    type: "Recognition",
   },
 ];
+
+const types = ['All', 'Achievement', 'Certification', 'Leadership', 'Recognition'];
 ---
 
 <BaseLayout
@@ -47,7 +161,7 @@ const achievements = [
   <section class="max-w-4xl mx-auto px-6 py-24">
 
     <!-- Header -->
-    <div class="mb-16">
+    <div class="mb-12">
       <h1 class="text-4xl md:text-5xl font-bold mb-4"
           style="color: var(--color-foreground);">
         Achievements
@@ -59,16 +173,48 @@ const achievements = [
       </p>
     </div>
 
+    <!-- Stats Row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      {[
+        { number: '5+', label: 'Years at TCS' },
+        { number: '15+', label: 'Certifications' },
+        { number: '230+', label: 'Mentored' },
+        { number: '1000+', label: 'Students Empowered' },
+      ].map(stat => (
+        <div class="card text-center space-y-1">
+          <p class="text-3xl font-bold" style="color: var(--color-primary);">{stat.number}</p>
+          <p class="text-xs" style="color: #64748b;">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-3 mb-10" id="filter-buttons">
+      {types.map(type => (
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer"
+          data-type={type}
+          style={type === 'All'
+            ? 'background-color: var(--color-primary); color: white;'
+            : 'background-color: #1e293b; color: #94a3b8; border: 1px solid #334155;'}
+        >
+          {type}
+        </button>
+      ))}
+    </div>
+
     <!-- Timeline -->
-    <div class="relative space-y-8">
+    <div class="relative space-y-6" id="achievements-list">
 
       <!-- Timeline Line -->
       <div class="absolute left-8 top-0 bottom-0 w-px"
            style="background-color: #1e293b;"></div>
 
       {achievements.map(item => (
-        <div class="relative flex gap-6 pl-20">
-
+        <div
+          class="relative flex gap-6 pl-20 achievement-item"
+          data-type={item.type}
+        >
           <!-- Icon -->
           <div class="absolute left-0 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shrink-0"
                style="background-color: #1e293b; border: 1px solid #334155;">
@@ -79,7 +225,11 @@ const achievements = [
           <div class="card flex-1 space-y-3">
             <div class="flex items-center justify-between flex-wrap gap-2">
               <span class="px-3 py-1 rounded-full text-xs font-medium"
-                    style="background-color: #0f172a; color: var(--color-primary); border: 1px solid var(--color-primary);">
+                    style={`background-color: #0f172a; border: 1px solid;
+                    ${item.type === 'Achievement' ? 'color: #22c55e; border-color: #22c55e;' :
+                      item.type === 'Certification' ? 'color: #6366f1; border-color: #6366f1;' :
+                      item.type === 'Leadership' ? 'color: #f59e0b; border-color: #f59e0b;' :
+                      'color: #ec4899; border-color: #ec4899;'}`}>
                 {item.type}
               </span>
               <span class="text-sm font-medium" style="color: #64748b;">{item.year}</span>
@@ -91,10 +241,94 @@ const achievements = [
               {item.description}
             </p>
           </div>
-
         </div>
       ))}
 
     </div>
+
+    <!-- Recommendations Section -->
+    <div class="mt-20">
+      <h2 class="text-2xl font-bold mb-8" style="color: var(--color-foreground);">
+        What People Say
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            name: "Glenn Lau",
+            role: "Senior Manager, CRM Operations – Rogers Communications",
+            text: "Yokes is one of my most trusted IT partners. He always steps into the shoes of the business when investigating issues. Not only an exceptional problem solver, but manages any issue with strong end-to-end ownership.",
+            year: "2025"
+          },
+          {
+            name: "HariKrishna Aranga",
+            role: "SAS Architect | AWS | Kubernetes",
+            text: "Yokeswaran is very attentive to details, has keen interest in understanding architecture and implementation details. I feel confident delegating activities knowing he does the due diligence and mentors new members efficiently.",
+            year: "2023"
+          },
+          {
+            name: "Milind Wankhede",
+            role: "Clinical Business Systems Senior Analyst",
+            text: "Yokes is very hardworking and sincere towards his work. He shows enthusiasm to learn new technologies and take new responsibilities. He learned SAS and gained expertise in a short time.",
+            year: "2023"
+          },
+          {
+            name: "Mark Anthony Claramo",
+            role: "BI Analyst – Data Analysis & Modeling",
+            text: "It's been good working with Yokes. He helped me investigate data ETL in a timely manner. He makes sure he can deliver results as soon as possible even if it needs manual data checks.",
+            year: "2023"
+          },
+        ].map(rec => (
+          <div class="card space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                   style="background: linear-gradient(135deg, #6366f1, #22c55e); color: white;">
+                {rec.name.charAt(0)}
+              </div>
+              <div>
+                <p class="font-semibold text-sm" style="color: var(--color-foreground);">{rec.name}</p>
+                <p class="text-xs" style="color: #64748b;">{rec.role}</p>
+              </div>
+              <span class="ml-auto text-xs" style="color: #64748b;">{rec.year}</span>
+            </div>
+            <p class="text-sm leading-relaxed italic" style="color: #94a3b8;">
+              "{rec.text}"
+            </p>
+            <div class="flex gap-1">
+              {[1,2,3,4,5].map(() => (
+                <span style="color: #f59e0b;">★</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
   </section>
 </BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.achievement-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.getAttribute('data-type');
+
+      filterBtns.forEach(b => {
+        b.setAttribute('style',
+          'background-color: #1e293b; color: #94a3b8; border: 1px solid #334155;'
+        );
+      });
+      btn.setAttribute('style',
+        'background-color: var(--color-primary); color: white;'
+      );
+
+      items.forEach(item => {
+        const type = item.getAttribute('data-type');
+        const show = selected === 'All' || type === selected;
+        (item as HTMLElement).style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
