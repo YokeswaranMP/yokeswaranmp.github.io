@@ -7,15 +7,6 @@ category: "Automation"
 draft: false
 ---
 
----
-title: "How I Built My Developer Portfolio with Astro, Tailwind CSS, and AI — Completely Free"
-date: 2026-03-22
-description: "A complete end-to-end walkthrough of how I built a modern developer portfolio and blog platform using Astro v6, Tailwind CSS v4, Pagefind search, Make.com automation, and a Groq AI chat agent — all for $0."
-tags: ["astro", "tailwind", "portfolio", "automation", "ai", "github-pages"]
-category: "Automation"
-draft: false
----
-
 ## Introduction
 
 Every developer needs a portfolio. But most portfolios are either too simple, too template-like, or too expensive to maintain. I wanted something different — a platform that is fast, modern, fully automated, and costs absolutely nothing to run.
