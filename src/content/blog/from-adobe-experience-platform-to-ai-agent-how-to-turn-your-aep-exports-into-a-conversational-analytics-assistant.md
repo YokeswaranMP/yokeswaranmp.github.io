@@ -249,26 +249,19 @@ How many audiences have 0 to 11 profiles?
 Which offers have low audience reach?
 ```
 
-### Rule Expression Analysis
-```
-What are all the CTN-based offers?
-Which HUP offers exist?
-Which delinquency offers exist?
-Which suspended account offers exist?
-```
 
 ### Brand and LOB Distribution
 ```
-Show Rogers offers
-Show Fido offers
+Show Jio offers
+Show Airtel offers
 Brand distribution across catalogue
-Compare Rogers vs Fido audience reach
+Compare Jio vs Airtel audience reach
 ```
 
 ### Province Targeting
 ```
-Which offers target ON?
-Which offers target BC?
+Which offers target IN?
+Which offers target SR?
 Show all province-targeted offers
 ```
 
