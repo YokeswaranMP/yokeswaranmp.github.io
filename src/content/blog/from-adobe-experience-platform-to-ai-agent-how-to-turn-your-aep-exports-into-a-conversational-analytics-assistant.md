@@ -7,14 +7,6 @@ category: "Adobe AEP"
 draft: false
 ---
 
----
-title: "From Adobe Experience Platform to AI Agent: How to Turn Your AEP Exports into a Conversational Analytics Assistant"
-date: 2026-03-22
-description: "Learn how to export AEP offers, decision rules, and audiences, join them into a single dataset, and connect an AI agent that answers plain-English questions about your entire offer decisioning landscape."
-tags: ["adobe-aep", "ajo", "ai-agent", "offer-decisioning", "audience-management", "natural-language-analytics", "python"]
-category: "Adobe AEP"
-draft: false
----
 
 ## The Idea in One Sentence
 
@@ -28,7 +20,7 @@ That is the entire concept. The rest of this post is about what that looks like 
 
 Most AEP teams operate with fragmented visibility. You look at offers in the offer catalogue, audiences in the audience portal, and decision rules in the decisions workspace — three separate screens, no single view of how they connect.
 
-When something breaks in production the question is always: *which audience is this offer actually targeting, and why?* Getting that answer usually means finding a development SME, waiting, and hoping they remember the configuration.
+When something breaks in production, the question is always: *which audience is this offer actually targeting, and why?* Getting that answer usually means finding a development SME, waiting, and hoping they remember the configuration.
 
 There is also a harder operational constraint sitting in the background: **Adobe limits you to only 2 manual audience refreshes**. With no clear visibility into which audiences are active, unexpired, and have valid profile counts, there is a real risk of burning those refresh slots on audiences that are orphaned, expired, or have zero members.
 
