@@ -155,7 +155,7 @@ Each audience in AEP has its own qualification logic stored in `ansibleDataModel
 | `segmentRule` — temporal (in-last) | `offer_refresh_date is within the last 7 days` |
 | `segmentRule` — temporal (after date) | `offer_refresh_date is after 2026-03-11` |
 | `segmentRule` — referenced-date | `INIT_ACTIVATION_DATE is before 1 days of referenced date of EVENT_TRIGGER_DATETIME` |
-| `segmentRule` — null check | `RogersECID does not exist` |
+| `segmentRule` — null check | `ECID does not exist` |
 | `multiValueParentContainer` — simple | `Include at least 1 instance(s) of WRL_SUBSCRIPTION where (...)` |
 | `multiValueParentContainer` — aggregate | `Include the count equals 9 of mm_2x where (...)` |
 | `segmentContainer` — sub-group | `NOT (...)` or `(... OR ...)` |
